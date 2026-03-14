@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Glitch Tap</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%; height: 100%;
+      background: #000;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: none;
+    }
+    #wrap {
+      position: relative;
+      width: 800px;
+      height: 600px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 0 3px #1a001a, 0 0 60px 12px rgba(255,0,255,0.2), 0 0 120px 30px rgba(0,0,0,0.9);
+    }
+    #wrap canvas { position: absolute; top: 0; left: 0; display: block; border-radius: 20px; }
+    #kaboom-canvas { z-index: 1; }
+    #overlay      { z-index: 2; pointer-events: none; }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <canvas id="kaboom-canvas" width="800" height="600"></canvas>
+    <canvas id="overlay"       width="800" height="600"></canvas>
+  </div>
+  <script src="https://unpkg.com/kaboom@3000.1.17/dist/kaboom.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
